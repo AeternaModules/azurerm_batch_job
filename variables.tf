@@ -16,7 +16,7 @@ EOT
     name                          = string
     common_environment_properties = optional(map(string))
     display_name                  = optional(string)
-    priority                      = optional(number, 0)
+    priority                      = optional(number) # Default: 0
     task_retry_maximum            = optional(number)
   }))
 }
