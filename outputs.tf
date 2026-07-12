@@ -1,3 +1,7 @@
+output "batch_jobs_id" {
+  description = "Map of id values across all batch_jobs, keyed the same as var.batch_jobs"
+  value       = { for k, v in azurerm_batch_job.batch_jobs : k => v.id }
+}
 output "batch_jobs_batch_pool_id" {
   description = "Map of batch_pool_id values across all batch_jobs, keyed the same as var.batch_jobs"
   value       = { for k, v in azurerm_batch_job.batch_jobs : k => v.batch_pool_id }
